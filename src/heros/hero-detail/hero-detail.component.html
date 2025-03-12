@@ -1,0 +1,15 @@
+<div style="background-color: azure">
+  <form [formGroup]="form" (ngSubmit)="handleSubmit()">
+    <h3 class="font-bold">{{ (detailService.data$ | async)?.name }}</h3>
+    <input class="block" type="text" formControlName="name" />
+    <input class="block" type="number" formControlName="rating" />
+    <button
+      style="background-color: aliceblue"
+      class="block p-2"
+      type="submit"
+      (click)="handleSubmit()"
+    >
+      Save
+    </button>
+  </form>
+</div>

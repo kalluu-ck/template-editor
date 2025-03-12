@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@use "tailwindcss";
+
+html, body {
+  height: 100%;
+}
+
+.btn {
+  color: white;
+  padding: 6px;
+  background-color:chocolate;
+  border: 1px solid chocolate;
+  border-radius: 5%;
+}
+
+.highlight {
+  color: chocolate;
+}
+
+.custom-blot {
+  background-color: gainsboro;
+}
