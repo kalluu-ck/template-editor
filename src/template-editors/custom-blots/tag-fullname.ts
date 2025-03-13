@@ -8,7 +8,7 @@ export class FullNameBlot extends CustomEmbed {
   static override blotName = 'fullname';
   static override tagName = 'app-fullname';
   static override dataMapping = {
-    fullname$: 'name',
+    id$: 'id',
   };
   static override placeholderLabel = 'FullName';
 }

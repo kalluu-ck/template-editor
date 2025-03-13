@@ -4,11 +4,6 @@ import { DynamicHooksComponent, ParseOptions } from 'ngx-dynamic-hooks';
 import { DateComponent } from '../editor-components/date.component';
 import { FullNameComponent } from '../editor-components/fullname.component';
 
-export interface PersonModel {
-  name: string;
-  birthdate: Date;
-}
-
 @Component({
   selector: 'app-template-renderer',
   template:

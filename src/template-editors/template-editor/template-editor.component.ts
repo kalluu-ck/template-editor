@@ -14,10 +14,8 @@ import {
 import { QuillEditorComponent, QuillModule } from 'ngx-quill';
 import Quill from 'quill';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import {
-  PersonModel,
-  TemplateRendererComponent,
-} from './template-renderer.component';
+import { TemplateRendererComponent } from './template-renderer.component';
+import { PersonDataService, PersonModel } from '../person-data.service';
 
 @Component({
   selector: 'app-template-editor',
@@ -30,8 +28,11 @@ import {
   templateUrl: './template-editor.component.html',
   styleUrl: './template-editor.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [PersonDataService],
 })
 export class TemplateEditorComponent implements OnInit {
+  constructor(private service: PersonDataService) {}
+
   readonly editor$ = viewChild(QuillEditorComponent);
 
   modules = {
@@ -62,12 +63,11 @@ export class TemplateEditorComponent implements OnInit {
     editor: new FormControl('', Validators.required),
   });
   outputHtmlString: string = '';
-  personData: PersonModel = {
-    name: 'Jalan Alor',
-    birthdate: new Date(),
-  };
+
+  personData: PersonModel | undefined;
 
   ngOnInit(): void {
+    this.personData = this.service.loadPerson(2);
     this.editorForm.valueChanges
       .pipe(debounceTime(500), distinctUntilChanged())
       .subscribe((x) => {

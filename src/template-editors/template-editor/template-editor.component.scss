@@ -1,9 +1,7 @@
 :host {
-  display: block;
-  height: 100%;
+  @apply block h-full;
 }
 
 #quillEditor {
-  display: flex;
-  flex-direction: column;
+  @apply flex flex-col
 }

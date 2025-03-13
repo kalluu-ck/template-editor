@@ -2,15 +2,23 @@
 @use "tailwindcss";
 
 html, body {
-  height: 100%;
+  @apply h-full;
 }
 
 .btn {
+  @apply p-2 border rounded-xs cursor-pointer;  
   color: white;
-  padding: 6px;
   background-color:chocolate;
-  border: 1px solid chocolate;
-  border-radius: 5%;
+  border-color: chocolate;
+
+  &:hover {
+    background-color:saddlebrown;
+    border-color: saddlebrown;
+  }
+
+  &:active {
+    color: orange;
+  }
 }
 
 .highlight {
