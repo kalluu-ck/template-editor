@@ -25,6 +25,12 @@ const heroDetailTitleResolver = (
 export const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
+    title: 'Template Editor',
+    component: TemplateEditorComponent,
+  },
+  {
+    path: 'dashboard',
     title: 'Dashboard',
     component: HeroDashboardComponent,
   },
@@ -39,11 +45,5 @@ export const routes: Routes = [
     pathMatch: 'full',
     title: heroDetailTitleResolver,
     component: HeroDetailComponent,
-  },
-  {
-    path: 'template-editor',
-    pathMatch: 'full',
-    title: 'Template Editor',
-    component: TemplateEditorComponent,
   },
 ];
