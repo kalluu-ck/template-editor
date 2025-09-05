@@ -1,6 +1,0 @@
-<div style="background-color: khaki">
-  <h2 class="font-bold">My Heroes</h2>
-  @for (hero of heroes; track hero.id) {
-  <a class="block" [routerLink]="hero.id.toString()">{{ hero.name }}</a>
-  }
-</div>

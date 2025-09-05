@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { TemplateEditorComponent } from '../template-editors/template-editor/template-editor.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterLink, RouterOutlet],
+  imports: [TemplateEditorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

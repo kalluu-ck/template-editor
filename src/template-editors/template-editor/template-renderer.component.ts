@@ -6,8 +6,12 @@ import { FullNameComponent } from '../editor-components/fullname.component';
 
 @Component({
   selector: 'app-template-renderer',
-  template:
-    '<ngx-dynamic-hooks [content]="htmlString$()" [parsers]="parsers" [options]="options" [context]="data$()"></ngx-dynamic-hooks>',
+  template: `<ngx-dynamic-hooks
+    [content]="htmlString$()"
+    [parsers]="parsers"
+    [options]="options"
+    [context]="data$()"
+  ></ngx-dynamic-hooks>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [DynamicHooksComponent],
 })

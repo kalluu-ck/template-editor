@@ -1,8 +1,0 @@
-<div class="flex flex-col" style="background-color: antiquewhite">
-  <h2 class="font-bold">Top Heroes</h2>
-  @for(hero of TopHeroes; track hero.id) {
-  <a class="block" [routerLink]="'heroes/' + hero.id.toString()">{{
-    hero.name
-  }}</a>
-  }
-</div>
